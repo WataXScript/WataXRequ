@@ -7,7 +7,7 @@ local hrp
 
 
 local ROUTE_LINKS = {
-    "https://raw.githubusercontent.com/WataXMenu/WataXScbaru/refs/heads/main/70.lua",
+    "https://raw.githubusercontent.com/WataXScript/WataXRequ/refs/heads/main/810.lua",
 }
 
 
@@ -49,7 +49,7 @@ local function setupMovement(char)
         local root = char:WaitForChild("HumanoidRootPart", 5)
         if not humanoid or not root then return end
 
-        
+        -- ✅ Tambahan stop kalau mati + update tombol UI
         humanoid.Died:Connect(function()
             print("[WataX] Karakter mati, replay otomatis berhenti.")
             isReplayRunning = false
@@ -338,6 +338,6 @@ speedUp.BackgroundColor3 = Color3.fromRGB(100,100,150)
 speedUp.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", speedUp).CornerRadius = UDim.new(0,6)
 speedUp.MouseButton1Click:Connect(function()
-    playbackRate = math.min(6, playbackRate+0.25)
+    playbackRate = math.min(3, playbackRate+0.25)
     speedLabel.Text = playbackRate.."x"
 end)
